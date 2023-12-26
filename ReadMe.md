@@ -47,7 +47,7 @@ Let's start, Use https://start.spring.io/ to build Spring boot project with belo
    3. lombok
    4. devtools
 
-Import this project in intellij and create below modules:  
+Import this project in intellij and will create below 3 modules:  
 **1. Create a module common-dto**  
    - A simple Joke class is created.
    ```
