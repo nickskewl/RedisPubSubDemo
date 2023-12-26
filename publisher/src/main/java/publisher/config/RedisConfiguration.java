@@ -1,5 +1,6 @@
 package publisher.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,8 +24,11 @@ public class RedisConfiguration {
         return new ChannelTopic(redisPubSubTopic);
     }
 
+    @Autowired
+    RedisConnectionFactory connectionFactory;
+
     @Bean(name = "publisherRedisTemplate")
-    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
+    public RedisTemplate<String, Object> redisTemplate() {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
         template.setConnectionFactory(connectionFactory);
         template.setValueSerializer(new GenericJackson2JsonRedisSerializer());

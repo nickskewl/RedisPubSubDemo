@@ -15,6 +15,10 @@ import java.io.IOException;
  */
 @Service
 @Slf4j
+/*
+Events would arrive at the Message Listener and from there we can use the event as we need.
+We need to implement onMessage method of MessageListener interface.
+ */
 public class RedisSubscriberService implements MessageListener {
 
     @Autowired
