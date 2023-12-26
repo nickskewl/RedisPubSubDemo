@@ -1,13 +1,11 @@
-**What are Streaming Systems?**
-
+**What are Streaming Systems?**  
 Streaming systems are message based systems, that handle a flow of events in an organized way. They are used to passing on these events between different parts of a system without making them too dependent on each other.
 
-**Why do we need this?**
-
+**Why do we need this?**  
 Ever had to handle a lot of things when you make an online order? like sending notifications, emails, assigning deliveries, and more.
 If we do all this in a single API request scope, then this particular API would take much time to complete all API calls to every external service.
 
-How does Streaming Systems Help?
+How does Streaming Systems Help?  
 Streaming system breaks the system into at-least 3 parts.
 1. Source: Where events start (Producer, Publisher, etc)
 2. Buffer or Queue: System where the events are stored or routed (Topics, Queues, PubSubs).
@@ -33,8 +31,7 @@ Three most used streaming systems:
    
 Each type has its own strengths, like how queues are good for making sure everything gets processed, topics are great for broadcasting updates, and PubSub is like a live broadcast where you need real-time communication.
 
-**PubSub implementation**
-
+**PubSub implementation**  
 Let's build a pubsub based messaging system in Java using Redis pubsub.
 In this, a publisher will publish a joke on a channel in every 5 sec and a subscriber subscribed to this channel with listen to these joke and print them.
 
@@ -50,8 +47,8 @@ Let's start, Use https://start.spring.io/ to build Spring boot project with belo
    3. lombok
    4. devtools
 
-Import this project in intellij and create below modules:
-1. Create a module common-dto
+Import this project in intellij and will create below 3 modules:  
+**1. Create a module common-dto**  
    - A simple Joke class is created.
    ```
    @Data
@@ -68,7 +65,7 @@ Import this project in intellij and create below modules:
     }
    }
    ```
-2. Create a module publisher
+**2. Create a module publisher**  
    1. Publisher Application:
    ```
    @SpringBootApplication
@@ -143,7 +140,7 @@ Import this project in intellij and create below modules:
        }
    }
    ```
-3. Create a module Subscriber:
+**3. Create a module Subscriber:**  
    1. Subscriber Application:
    ```
    @SpringBootApplication
@@ -223,7 +220,8 @@ Import this project in intellij and create below modules:
    
 Now, run the publisher and subscriber application to see the application in action.
 
-Publisher App console:
+
+**Publisher App console:**
 ```
 2023-12-26T12:10:42.589+05:30  INFO 13523 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
 2023-12-26T12:10:42.599+05:30  INFO 13523 --- [  restartedMain] publisher.PublisherApplication           : Started PublisherApplication in 2.233 seconds (process running for 2.687)
@@ -239,7 +237,7 @@ A: Got stacks of em! First one's on the house
 
 ```
 
-Subscriber App console:
+**Subscriber App console:**
 ```
 2023-12-26T12:10:32.788+05:30  INFO 13520 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
 2023-12-26T12:10:33.148+05:30  INFO 13520 --- [  restartedMain] subscriber.SubscriberApplication         : Started SubscriberApplication in 2.538 seconds (process running for 2.96)
@@ -251,8 +249,7 @@ Q: Want to hear a chimney joke?
 A: Got stacks of em! First one's on the house
 ```
 
-References:
-
-https://www.linkedin.com/pulse/streaming-system-series-part-1-topics-queues-pubsubs-shrey-batra/
-https://www.baeldung.com/spring-data-redis-pub-sub
-https://www.vinsguru.com/redis-pubsub-spring-boot/
+References:  
+https://www.linkedin.com/pulse/streaming-system-series-part-1-topics-queues-pubsubs-shrey-batra  
+https://www.baeldung.com/spring-data-redis-pub-sub  
+https://www.vinsguru.com/redis-pubsub-spring-boot  
