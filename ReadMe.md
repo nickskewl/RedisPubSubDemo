@@ -1,3 +1,7 @@
+**Where to go after this demo -->**  
+AWS SQS demo - https://github.com/nickskewl/AwsSqsDemo    
+Apache Kafka demo - https://github.com/nickskewl/ApacheKafkaDemo
+
 **What are Streaming Systems?**  
 Streaming systems are message based systems, that handle a flow of events in an organized way. They are used to passing on these events between different parts of a system without making them too dependent on each other.
 
